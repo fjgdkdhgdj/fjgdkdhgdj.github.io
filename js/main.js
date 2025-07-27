@@ -4,10 +4,10 @@ const examplespage = document.querySelector(".examplescontent");
 const consequencespage = document.querySelector(".consequencescontent");
 const whypage = document.querySelector(".whycontent");
 //get DOM for all the navigation anchors for the pages
-const homenav = document.querySelector(".indexnav");
-const examplesnav = document.querySelector(".examplesnav");
-const consequencesnav = document.querySelector(".consequencesnav");
-const whynav = document.querySelector(".whynav");
+const homenav = document.getElementsByClassName("indexnav");
+const examplesnav = document.getElementsByClassName("examplesnav");
+const consequencesnav = document.getElementsByClassName("consequencesnav");
+const whynav = document.getElementsByClassName("whynav");
 //get DOM for the buttons to switch the pages
 const indexbtn = document.querySelector("#indexbtn");
 const examplesbtn = document.querySelector("#examplesbtn");
@@ -46,7 +46,7 @@ const scoreelement = document.querySelector("#score");
 const explodsfx = new Audio('audio/boom.mp3');
 const yippeesfx = new Audio('audio/yippee.mp3');
 //get DOM for the history
-const history = document.querySelector("#history");
+const his = document.querySelector("#history");
 //get DOM for nameinput
 const nameinput=document.querySelector("#nameinput");
 
@@ -71,37 +71,53 @@ function hideall(){
     consequencespage.style.display="none";
     whypage.style.display="none";
 
-    homenav.style.display="none";
-    examplesnav.style.display="none";
-    consequencesnav.style.display="none";
-    whynav.style.display="none";
+    for (var i = 0; i<homenav.length; i++){
+        homenav[i].style.display="none";
+    }
+    for (var i = 0; i<examplesnav.length; i++){
+        examplesnav[i].style.display="none";
+    }
+    for (var i = 0; i<consequencesnav.length; i++){
+        consequencesnav[i].style.display="none";
+    }
+    for (var i = 0; i<whynav.length; i++){
+        whynav[i].style.display="none";
+    }
 }
 //this part kind of the same as that practical, just hideall then display the ones that we need
 indexbtn.addEventListener("click", function(){
     hideall();
-    homenav.style.display="block";
+    for (var i = 0; i<homenav.length; i++){
+        homenav[i].style.display="block";
+    }
     homepage.style.display="block";
-})
+});
 examplesbtn.addEventListener("click", function(){
     hideall();
     examplespage.style.display="block";
-    examplesnav.style.display="block";
-})
+    for (var i = 0; i<examplesnav.length; i++){
+        examplesnav[i].style.display="block";
+    }
+});
 consequencesbtn.addEventListener("click", function(){
     hideall();
     consequencespage.style.display="block";
-    consequencesnav.style.display="block";
-})
+    for (var i = 0; i<consequencesnav.length; i++){
+        consequencesnav[i].style.display="block";
+    }
+});
 whybtn.addEventListener("click", function(){
     hideall();
     whypage.style.display="block";
-    whynav.style.display="block";
-})
+    for (var i = 0; i<whynav.length; i++){
+        whynav[i].style.display="block";
+    }
+});
 startgame.addEventListener("click", function(){
     //start game
     gamestart();
     
-})
+});
 
 optioncontainer.addEventListener("click", function(event){
     if (ingame==true){
@@ -120,7 +136,7 @@ optioncontainer.addEventListener("click", function(event){
         generateoptions();
     }
     
-})
+});
 
 //function random number generator
 function rng(min, max){
@@ -198,7 +214,7 @@ function gamestart(){
         //start the timer
         timerintervalcontroller=setInterval(function () {
             //every second timer -1
-            timer.innerHTML -= 1
+            timer.innerHTML -= 1;
             //when reaches 0
             if (timer.innerHTML==0){
                 //stops game
@@ -211,7 +227,7 @@ function gamestart(){
                 var newwin=document.createElement('div');
                 newwin.classList.add("history");
                 newwin.textContent=nameinput.value + "-" + score;
-                history.appendChild(newwin);
+                his.appendChild(newwin);
             }
         }, 1000);
         //reset and update score ui
@@ -279,5 +295,7 @@ function moveoptions(){
 //hide all tabs
 hideall();
 //display the homepage stuff
-homenav.style.display="block";
+for (var i = 0; i<homenav.length; i++){
+    homenav[i].style.display="block";
+}
 homepage.style.display="block";

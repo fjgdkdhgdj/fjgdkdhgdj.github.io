@@ -3,7 +3,7 @@
 <head>
     <!--All the stuff in the head, like charset, viewport, title,and the js and css linking-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/x-icon" href="icon.ico">
@@ -31,22 +31,14 @@
                 <h2>Navigation</h2>
                 <!--unordered list to organise the anchors-->
                 <ul>
-                    <div class="indexnav">
-                        <li><a href="#welcome">Welcome</a></li>
-                        <li><a href="#mobile">Mobile Access</a></li> 
-                    </div>
-                    <div class="examplesnav">
-                        <li><a href="#games">Games</a></li>
-                        <li><a href="#shows">Media</a></li>
-                        <li><a href="#minigame">Minigame</a></li>
-                    </div>
-                    <div class="whynav">
-                        <li><a href="#things">Based off the same things</a></li>
-                    </div>
-                    <div class="consequencesnav">
-                        <li><a href="#bad">Bad Consequences</a></li>
-                        <li><a href="#good">Good Consequences</a></li>
-                    </div>
+                    <li class="indexnav"><a href="#welcome">Welcome</a></li>
+                    <li class="indexnav"><a href="#mobile">Mobile Access</a></li> 
+                    <li class="examplesnav"><a href="#games">Games</a></li>
+                    <li class="examplesnav"><a href="#shows">Media</a></li>
+                    <li class="examplesnav"><a href="#minigame">Minigame</a></li>
+                    <li class="whynav"><a href="#things">Based off the same things</a></li>
+                    <li class="consequencesnav"><a href="#bad">Bad Consequences</a></li>
+                    <li class="consequencesnav"><a href="#good">Good Consequences</a></li>
                 </ul>
                 
         </nav> 
@@ -88,10 +80,10 @@
                                 <summary>Characters</summary>
                                 <!--ordered list to organise characters, using css sprites here since I will be reusing them for minigame so might as well cut down on storage-->
                                 <ol>
-                                    <li><img class="astolfo"><h3>Astolfo</h3></li>
-                                    <li><img class="eresh"><h3>Ereshkigal</h3></li>
-                                    <li><img class="gil"><h3>Gilgamesh</h3></li>
-                                    <li><img class="douman"><h3>Ashiya Douman</h3></li>
+                                    <li><div class="astolfo"></div><h3>Astolfo</h3></li>
+                                    <li><div class="eresh"></div><h3>Ereshkigal</h3></li>
+                                    <li><div class="gil"></div><h3>Gilgamesh</h3></li>
+                                    <li><div class="douman"></div><h3>Ashiya Douman</h3></li>
                                 </ol>
                             </details>    
                         </div>
@@ -108,8 +100,8 @@
                                 <summary>Characters</summary>
                                 <!--ordered list to organise characters, using css sprites here since I will be reusing them for minigame so might as well cut down on storage-->
                                 <ol>
-                                    <li><img class="yisang"><h3>Yi Sang</h3></li>
-                                    <li><img class="sinclair"><h3>Sinclair</h3></li>
+                                    <li><div class="yisang"></div><h3>Yi Sang</h3></li>
+                                    <li><div class="sinclair"></div><h3>Sinclair</h3></li>
                                 </ol>
                             </details>
                         </div>
@@ -124,8 +116,8 @@
                                 <summary>Characters</summary>
                                 <!--ordered list to organise characters, using css sprites here since I will be reusing them for minigame so might as well cut down on storage-->
                                 <ol>
-                                    <li><img class="dante"><h3>Dante</h3></li>
-                                    <li><img class="vergil"><h3>Vergil</h3></li>
+                                    <li><div class="dante"></div><h3>Dante</h3></li>
+                                    <li><div class="vergil"></div><h3>Vergil</h3></li>
                                 </ol>
                             </details>
                         </div>
@@ -145,9 +137,9 @@
                                 <summary>Characters</summary>
                                 <!--ordered list to organise characters, using css sprites here since I will be reusing them for minigame so might as well cut down on storage-->
                                 <ol>
-                                    <li><img class="goldshi"><h3>Gold Ship</h3></li>
-                                    <li><img class="haru"><h3>Haru Urara</h3></li>
-                                    <li><img class="teio"><h3>Tokai Teio</h3></li>
+                                    <li><div class="goldshi"></div><h3>Gold Ship</h3></li>
+                                    <li><div class="haru"></div><h3>Haru Urara</h3></li>
+                                    <li><div class="teio"></div><h3>Tokai Teio</h3></li>
                                 </ol>
                             </details>
                         </div>
@@ -162,7 +154,7 @@
                                 <summary>Characters</summary>
                                 <!--ordered list to organise characters, using css sprites here since I will be reusing them for minigame so might as well cut down on storage-->
                                 <ol>
-                                    <li><img class="leonidas"><h3>Leonidas</h3></li>
+                                    <li><div class="leonidas"></div><h3>Leonidas</h3></li>
                                 </ol>
                             </details>
                         </div>
@@ -190,8 +182,8 @@
                         <div id="score">Score:</div>
                         <div id="timer">0</div>
                         <h3>Who is this?</h3>
-                        <!--image where i will add css sprites onto it by adding and removing sprite classes to ask which charcter is it-->
-                        <img id="gameqn">
+                        <!--div where i will add css sprites onto it by adding and removing sprite classes to ask which charcter is it-->
+                        <div id="gameqn"></div>
                         <!--div where i will appendchild in js to create the randomised options-->
                         <div id="minigameoptions">
                         </div>
